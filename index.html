@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tesu Law is a modern law firm specializing in startup advisory, venture capital, intellectual property, and commercial litigation. Expert legal counsel for businesses and entrepreneurs.">
+    <meta property="og:title" content="Tesu Law | Modern Legal Solutions for Business">
+    <meta property="og:description" content="Expert legal counsel for startups, investors, and established businesses. Specializing in venture capital, intellectual property, and commercial litigation.">
+    <meta property="og:image" content="https://tesulaw.com/og-image.jpg">
+    <meta property="og:url" content="https://tesulaw.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>Tesu Law | Modern Legal Solutions for Business</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Disclaimer Popup -->
+    <div class="disclaimer-overlay" id="disclaimerPopup">
+        <div class="disclaimer-popup">
+            <h3>Disclaimer</h3>
+            <p>
+                This website is intended to provide users with basic information on Tesu Law, which is the same as otherwise available on the internet, social media and other public platforms.
+            </p>
+            <p>
+                By accessing this website, you acknowledge that you are seeking information about Tesu Law of your own accord and that there has been no form of solicitation, advertisement or inducement by Tesu Law or its members.
+            </p>
+            <p>
+                This website should not be construed as providing any legal advice, nor creating any lawyer-client relationship. Visitors are advised to seek formal legal counsel before acting on any information contained in this website.
+            </p>
+            <p>
+                Links to third-party websites should not be construed as endorsements of, or affiliations with, such websites.
+            </p>
+            <button class="btn btn-primary" onclick="closeDisclaimer()">I Acknowledge</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="tesulaw-logo-horizontal-black-vector.svg" alt="Tesu Law">
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Practice Areas</a>
+                <a href="team.html" class="nav-link">Our Team</a>
+                <a href="contact.html" class="nav-cta">Contact Us</a>
+            </nav>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Practice Areas</a>
+            <a href="team.html" class="nav-link">Our Team</a>
+            <a href="contact.html" class="nav-cta">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-label">Modern Legal Excellence</span>
+                    <h1>Strategic Legal Counsel for the New Economy</h1>
+                    <p class="hero-subtitle">
+                        We partner with ambitious founders, investors, and businesses to navigate complex legal landscapes. From startup formation to high-stakes litigation, we deliver results that matter.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Schedule a Consultation</a>
+                        <a href="services.html" class="btn btn-white btn-lg">Our Practice Areas</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="tesu-both.png" alt="Tesu Law Founding Partners">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Do</span>
+                <h2>Comprehensive Legal Solutions</h2>
+                <p>From emerging startups to established enterprises, we provide strategic legal guidance across every stage of business growth.</p>
+            </div>
+            <div class="services-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <h3>Startup Advisory</h3>
+                    <p>End-to-end legal support for founders, from incorporation and equity structuring to scaling operations and exit strategies.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3>Venture Capital & Funding</h3>
+                    <p>Comprehensive support for equity and debt financing rounds, from term sheet negotiations to closing documentation.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3>Intellectual Property</h3>
+                    <p>Protecting your innovations through strategic IP counsel, trademark registration, and enforcement strategies.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h3>Commercial Contracts</h3>
+                    <p>Drafting and negotiating high-value contracts that protect your interests while enabling business growth.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                        </svg>
+                    </div>
+                    <h3>Dispute Resolution</h3>
+                    <p>Strategic litigation and arbitration services to protect your business interests in complex commercial disputes.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <h3>Regulatory Compliance</h3>
+                    <p>Navigating complex regulatory frameworks across sectors including fintech, healthcare, and emerging technologies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">14+</div>
+                    <div class="stat-label">Years Combined Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Transactions Closed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Startups Advised</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500Cr+</div>
+                    <div class="stat-label">Deal Value Handled</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why Tesu Law</span>
+                <h2>A Different Kind of Law Firm</h2>
+                <p>We combine top-tier legal expertise with an entrepreneurial mindset to deliver practical, business-focused solutions.</p>
+            </div>
+            <div class="services-grid">
+                <div class="card">
+                    <h3>Premier Experience</h3>
+                    <p>Our team brings experience from India's leading law firms, including Trilegal and Parekh & Co., with appearances before the Supreme Court in landmark cases.</p>
+                </div>
+                <div class="card">
+                    <h3>Business-First Approach</h3>
+                    <p>We understand that legal advice must serve business objectives. Our counsel is always practical, actionable, and aligned with your commercial goals.</p>
+                </div>
+                <div class="card">
+                    <h3>Responsive Partnership</h3>
+                    <p>We pride ourselves on accessibility and responsiveness. Your matters receive personal attention from experienced attorneys, not junior associates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Preview -->
+    <section class="section section-gray team-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Leadership</span>
+                <h2>Meet the Team</h2>
+                <p>Experienced attorneys dedicated to your success.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="raghav.jpg" alt="Raghav Bansal">
+                    </div>
+                    <div class="team-info">
+                        <h3>Raghav Bansal</h3>
+                        <div class="team-title">Founding Partner</div>
+                        <p class="team-bio">Over 8 years of experience in civil and commercial litigation, high-value contractual disputes, and arbitration. Former attorney at Trilegal and Parekh & Co.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="pranav.jpg" alt="Pranav Butalia">
+                    </div>
+                    <div class="team-info">
+                        <h3>Pranav Butalia</h3>
+                        <div class="team-title">Founding Partner</div>
+                        <p class="team-bio">Specializes in drafting and negotiating high-value contracts in regulated sectors. Over 6 years at Trilegal. Currently consulting with the World Bank.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: var(--spacing-xl);">
+                <a href="team.html" class="btn btn-outline">Learn More About Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Discuss Your Legal Needs?</h2>
+            <p>Schedule a consultation with our team to explore how we can support your business objectives.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="tesulaw-logo-horizontal-black-vector.svg" alt="Tesu Law">
+                    </a>
+                    <p>A new-age law firm providing strategic legal counsel to startups, investors, and established businesses across India.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Practice Areas</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#startup">Startup Advisory</a></li>
+                        <li><a href="services.html#funding">Venture Capital</a></li>
+                        <li><a href="services.html#ip">Intellectual Property</a></li>
+                        <li><a href="services.html#litigation">Dispute Resolution</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Firm</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@tesulaw.com">contact@tesulaw.com</a></li>
+                        <li><a href="tel:+919953016904">+91 99530 16904</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tesu Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" onclick="showDisclaimer(); return false;">Disclaimer</a>
+                    <a href="#" onclick="showPrivacyPolicy(); return false;">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Popup -->
+    <div class="disclaimer-overlay" id="privacyPopup" style="display: none;">
+        <div class="disclaimer-popup">
+            <h3>Privacy Policy</h3>
+            <p>
+                <strong>Information Collection:</strong> Tesu Law collects personal information that you voluntarily provide when contacting us, including your name, email address, phone number, and details about your legal inquiry. We may also collect information about your visit to our website through cookies and analytics tools.
+            </p>
+            <p>
+                <strong>Use of Information:</strong> We use the information collected to respond to your inquiries, provide legal services, improve our website, and communicate with you about matters relevant to our services. We do not sell, trade, or rent your personal information to third parties.
+            </p>
+            <p>
+                <strong>Data Security:</strong> We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.
+            </p>
+            <p>
+                <strong>Third-Party Links:</strong> Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites.
+            </p>
+            <p>
+                <strong>Contact:</strong> For questions about this privacy policy, please contact us at <a href="mailto:contact@tesulaw.com">contact@tesulaw.com</a>.
+            </p>
+            <button class="btn btn-primary" onclick="closePrivacyPolicy()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Disclaimer popup
+        function closeDisclaimer() {
+            document.getElementById('disclaimerPopup').style.display = 'none';
+            localStorage.setItem('disclaimerAccepted', 'true');
+        }
+
+        function showDisclaimer() {
+            document.getElementById('disclaimerPopup').style.display = 'flex';
+        }
+
+        function showPrivacyPolicy() {
+            document.getElementById('privacyPopup').style.display = 'flex';
+        }
+
+        function closePrivacyPolicy() {
+            document.getElementById('privacyPopup').style.display = 'none';
+        }
+
+        // Check if disclaimer was already accepted
+        if (localStorage.getItem('disclaimerAccepted') === 'true') {
+            document.getElementById('disclaimerPopup').style.display = 'none';
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile navigation toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileNav = document.getElementById('mobileNav');
+
+        mobileToggle.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking a link
+        document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
