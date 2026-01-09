@@ -141,12 +141,11 @@
                         Fill out the form below and we'll get back to you within 24 hours.
                     </p>
 
-                    <form id="contactForm" action="https://formsubmit.co/ritwikrathore@yahoo.co.in" method="POST">
+                    <form id="contactForm">
                         <!-- FormSubmit Configuration -->
                         <input type="hidden" name="_subject" value="New Contact Form Submission - Tesu Law">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://tesulaw.com/contact.html?submitted=true">
 
                         <div class="form-row">
                             <div class="form-group">
@@ -389,20 +388,50 @@
             });
         });
 
-        // Check if form was submitted successfully (redirected back with query param)
-        if (window.location.search.includes('submitted=true')) {
-            const formContainer = document.querySelector('.contact-form');
-            formContainer.innerHTML = `
-                <div style="text-align: center; padding: var(--spacing-xl);">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" style="margin-bottom: var(--spacing-md);">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <h3 style="margin-bottom: var(--spacing-sm);">Thank You!</h3>
-                    <p style="color: var(--text-light); margin-bottom: var(--spacing-lg);">Your message has been sent successfully. We will get back to you within 24 hours.</p>
-                    <a href="contact.html" class="btn btn-primary">Send Another Message</a>
-                </div>
-            `;
-        }
+        // Handle form submission via AJAX
+        const contactForm = document.getElementById('contactForm');
+        const formContainer = document.querySelector('.contact-form');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+
+            fetch('https://formsubmit.co/ajax/ritwikrathore@yahoo.co.in', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success === "true" || data.success === true) {
+                    formContainer.innerHTML = `
+                        <div style="text-align: center; padding: var(--spacing-xl);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" style="margin-bottom: var(--spacing-lg);">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <h3 style="margin-bottom: var(--spacing-sm);">Thank You!</h3>
+                            <p style="color: var(--text-light); margin-bottom: var(--spacing-lg);">Your message has been sent successfully. We will get back to you within 24 hours.</p>
+                            <a href="contact.html" class="btn btn-primary">Send Another Message</a>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Submission failed');
+                }
+            })
+            .catch(error => {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+                alert('There was an error sending your message. Please try again or contact us directly at contact@tesulaw.com');
+            });
+        });
     </script>
 </body>
 </html>
