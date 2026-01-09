@@ -970,11 +970,21 @@ img {
 
 .footer-bottom {
     padding-top: var(--spacing-lg);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.875rem;
+    position: relative;
+}
+
+.footer-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40%;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .footer-legal a {
@@ -1254,6 +1264,10 @@ img {
         text-align: center;
         font-size: 0.8rem;
         padding-top: var(--spacing-md);
+    }
+
+    .footer-bottom::before {
+        left: 0;
     }
 
     .footer-legal a {
