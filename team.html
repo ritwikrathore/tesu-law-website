@@ -59,7 +59,7 @@
     <!-- Team Introduction -->
     <section class="section">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="scroll-animate" style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <p style="font-size: 1.125rem;">
                     At Tesu Law, our strength lies in our people. Our founding partners bring over 14 years of combined experience from India's most prestigious law firms, with a track record that includes landmark Supreme Court cases and complex commercial transactions. We believe in providing direct access to senior counsel, ensuring that your matters receive the expertise and attention they deserve.
                 </p>
@@ -72,7 +72,7 @@
         <div class="container">
 
             <!-- Raghav Bansal -->
-            <div class="team-detail" id="raghav">
+            <div class="team-detail scroll-animate" id="raghav">
                 <div class="team-detail-image">
                     <img src="assets/raghav.jpg" alt="Raghav Bansal - Founding Partner at Tesu Law">
                 </div>
@@ -133,7 +133,7 @@
             </div>
 
             <!-- Pranav Butalia -->
-            <div class="team-detail" id="pranav">
+            <div class="team-detail scroll-animate" id="pranav">
                 <div class="team-detail-image">
                     <img src="assets/pranav.jpg" alt="Pranav Butalia - Founding Partner at Tesu Law">
                 </div>
@@ -198,11 +198,11 @@
     <!-- Our Approach -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-animate">
                 <span class="section-label">Our Approach</span>
                 <h2>What Sets Our Team Apart</h2>
             </div>
-            <div class="services-grid">
+            <div class="services-grid scroll-animate scroll-animate-stagger">
                 <div class="card">
                     <div class="card-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -236,7 +236,7 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
+        <div class="container scroll-animate">
             <h2>Work With Our Team</h2>
             <p>Schedule a consultation to discuss how we can help with your legal needs.</p>
             <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
@@ -374,6 +374,26 @@
                 mobileNav.classList.remove('active');
             });
         });
+
+        // Scroll animation with Intersection Observer
+        const scrollAnimateElements = document.querySelectorAll('.scroll-animate');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        scrollAnimateElements.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

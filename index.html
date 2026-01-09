@@ -94,12 +94,12 @@
     <!-- Services Overview -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-animate">
                 <span class="section-label">What We Do</span>
                 <h2>Comprehensive Legal Solutions</h2>
                 <p>From emerging startups to established enterprises, we provide strategic legal guidance across every stage of business growth.</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid scroll-animate scroll-animate-stagger">
                 <div class="card">
                     <div class="card-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -161,7 +161,7 @@
     <!-- Stats Section -->
     <section class="section section-gray">
         <div class="container">
-            <div class="stats">
+            <div class="stats scroll-animate scroll-animate-stagger">
                 <div class="stat-item">
                     <div class="stat-number">14+</div>
                     <div class="stat-label">Years Combined Experience</div>
@@ -185,12 +185,12 @@
     <!-- Why Choose Us -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-animate">
                 <span class="section-label">Why Tesu Law</span>
                 <h2>A Different Kind of Law Firm</h2>
                 <p>We combine top-tier legal expertise with an entrepreneurial mindset to deliver practical, business-focused solutions.</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid scroll-animate scroll-animate-stagger">
                 <div class="card">
                     <h3>Premier Experience</h3>
                     <p>Our team brings experience from India's leading law firms, including Trilegal and Parekh & Co., with appearances before the Supreme Court in landmark cases.</p>
@@ -210,12 +210,12 @@
     <!-- Team Preview -->
     <section class="section section-gray team-preview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-animate">
                 <span class="section-label">Our Leadership</span>
                 <h2>Meet the Team</h2>
                 <p>Experienced attorneys dedicated to your success.</p>
             </div>
-            <div class="team-grid">
+            <div class="team-grid scroll-animate scroll-animate-stagger">
                 <div class="team-card">
                     <div class="team-image">
                         <img src="assets/raghav.jpg" alt="Raghav Bansal">
@@ -245,7 +245,7 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
+        <div class="container scroll-animate">
             <h2>Ready to Discuss Your Legal Needs?</h2>
             <p>Schedule a consultation with our team to explore how we can support your business objectives.</p>
             <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
@@ -368,6 +368,26 @@
                 mobileNav.classList.remove('active');
             });
         });
+
+        // Scroll animation with Intersection Observer
+        const scrollAnimateElements = document.querySelectorAll('.scroll-animate');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        scrollAnimateElements.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

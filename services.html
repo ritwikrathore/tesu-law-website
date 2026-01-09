@@ -59,7 +59,7 @@
     <!-- Services Introduction -->
     <section class="section">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="scroll-animate" style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <p style="font-size: 1.125rem;">
                     At Tesu Law, we provide end-to-end legal support across the full business lifecycle. Whether you're launching a startup, raising capital, protecting intellectual property, or resolving complex disputes, our experienced team delivers strategic counsel that advances your commercial objectives.
                 </p>
@@ -72,7 +72,7 @@
         <div class="container">
 
             <!-- Startup Advisory -->
-            <div class="practice-area" id="startup">
+            <div class="practice-area scroll-animate" id="startup">
                 <div class="practice-content">
                     <div class="practice-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -103,7 +103,7 @@
             </div>
 
             <!-- Venture Capital & Funding -->
-            <div class="practice-area" id="funding">
+            <div class="practice-area scroll-animate" id="funding">
                 <div class="practice-content">
                     <div class="practice-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -135,7 +135,7 @@
             </div>
 
             <!-- Intellectual Property -->
-            <div class="practice-area" id="ip">
+            <div class="practice-area scroll-animate" id="ip">
                 <div class="practice-content">
                     <div class="practice-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -167,7 +167,7 @@
             </div>
 
             <!-- Commercial Contracts -->
-            <div class="practice-area" id="contracts">
+            <div class="practice-area scroll-animate" id="contracts">
                 <div class="practice-content">
                     <div class="practice-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -199,7 +199,7 @@
             </div>
 
             <!-- Dispute Resolution -->
-            <div class="practice-area" id="litigation">
+            <div class="practice-area scroll-animate" id="litigation">
                 <div class="practice-content">
                     <div class="practice-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -231,7 +231,7 @@
             </div>
 
             <!-- Regulatory Compliance -->
-            <div class="practice-area" id="regulatory">
+            <div class="practice-area scroll-animate" id="regulatory">
                 <div class="practice-content">
                     <div class="practice-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -268,12 +268,12 @@
     <!-- Industries Section -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-animate">
                 <span class="section-label">Industry Focus</span>
                 <h2>Sectors We Serve</h2>
                 <p>Deep expertise in the industries driving India's growth.</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid scroll-animate scroll-animate-stagger">
                 <div class="card">
                     <h3>Technology & SaaS</h3>
                     <p>Supporting software companies, platforms, and technology startups with everything from IP protection to complex licensing arrangements.</p>
@@ -304,7 +304,7 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
+        <div class="container scroll-animate">
             <h2>Need Legal Assistance?</h2>
             <p>Tell us about your legal needs and we'll help you find the right solution.</p>
             <a href="contact.html" class="btn btn-primary btn-lg">Schedule a Consultation</a>
@@ -458,6 +458,26 @@
                 }
             });
         });
+
+        // Scroll animation with Intersection Observer
+        const scrollAnimateElements = document.querySelectorAll('.scroll-animate');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        scrollAnimateElements.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

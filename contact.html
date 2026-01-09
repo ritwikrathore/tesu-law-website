@@ -59,7 +59,7 @@
     <!-- Contact Section -->
     <section class="section">
         <div class="container">
-            <div class="contact-grid">
+            <div class="contact-grid scroll-animate scroll-animate-stagger">
                 <!-- Contact Information -->
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
@@ -214,11 +214,11 @@
     <!-- FAQ Section -->
     <section class="section section-gray">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-animate">
                 <span class="section-label">Common Questions</span>
                 <h2>Before You Reach Out</h2>
             </div>
-            <div style="max-width: 800px; margin: 0 auto;">
+            <div class="scroll-animate" style="max-width: 800px; margin: 0 auto;">
                 <div style="margin-bottom: var(--spacing-xl);">
                     <h4>What should I prepare for an initial consultation?</h4>
                     <p style="color: var(--text-light);">
@@ -249,7 +249,7 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
+        <div class="container scroll-animate">
             <h2>Prefer to Talk?</h2>
             <p>Call us directly to speak with a member of our team.</p>
             <a href="tel:+919953016904" class="btn btn-primary btn-lg">+91 99530 16904</a>
@@ -432,6 +432,26 @@
                 alert('There was an error sending your message. Please try again or contact us directly at contact@tesulaw.com');
             });
         });
+
+        // Scroll animation with Intersection Observer
+        const scrollAnimateElements = document.querySelectorAll('.scroll-animate');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        scrollAnimateElements.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

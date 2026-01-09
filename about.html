@@ -59,11 +59,11 @@
     <!-- Our Story -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-animate">
                 <span class="section-label">Our Story</span>
                 <h2>Built for the Modern Business Landscape</h2>
             </div>
-            <div style="max-width: 800px; margin: 0 auto;">
+            <div class="scroll-animate" style="max-width: 800px; margin: 0 auto;">
                 <p style="font-size: 1.125rem; margin-bottom: var(--spacing-md);">
                     Tesu Law was founded with a simple belief: legal services should be as dynamic and forward-thinking as the businesses they serve. Our founders, Raghav Bansal and Pranav Butalia, spent years at India's most prestigious law firms, advising on high-stakes matters and witnessing firsthand what clients truly need from their legal partners.
                 </p>
@@ -83,7 +83,7 @@
     <!-- Mission & Vision -->
     <section class="section section-gray">
         <div class="container">
-            <div class="two-column-grid">
+            <div class="two-column-grid scroll-animate scroll-animate-stagger">
                 <div class="card">
                     <h3>Our Mission</h3>
                     <p style="font-size: 1.05rem; line-height: 1.8;">
@@ -103,12 +103,12 @@
     <!-- Our Values -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-animate">
                 <span class="section-label">Our Values</span>
                 <h2>The Principles That Guide Us</h2>
                 <p>These core values shape how we work, how we serve our clients, and how we build our firm.</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid scroll-animate scroll-animate-stagger">
                 <div class="card">
                     <div class="card-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -170,11 +170,11 @@
     <!-- Why Work With Us -->
     <section class="section section-gray">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-animate">
                 <span class="section-label">Our Approach</span>
                 <h2>Why Clients Choose Tesu Law</h2>
             </div>
-            <div style="max-width: 800px; margin: 0 auto;">
+            <div class="scroll-animate" style="max-width: 800px; margin: 0 auto;">
                 <div style="margin-bottom: var(--spacing-xl);">
                     <h3>Premier Pedigree, Personalized Service</h3>
                     <p>Our team brings experience from India's most prestigious law firms, including Trilegal and Parekh & Co. We've handled landmark Supreme Court cases and complex multi-crore transactions. But unlike large firms, we offer direct access to senior attorneys. Your matters are handled by experienced professionals, not delegated to junior associates.</p>
@@ -198,7 +198,7 @@
     <!-- Stats Section -->
     <section class="section">
         <div class="container">
-            <div class="stats">
+            <div class="stats scroll-animate scroll-animate-stagger">
                 <div class="stat-item">
                     <div class="stat-number">14+</div>
                     <div class="stat-label">Years Combined Experience</div>
@@ -221,7 +221,7 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
+        <div class="container scroll-animate">
             <h2>Ready to Work With Us?</h2>
             <p>Let's discuss how Tesu Law can support your business objectives.</p>
             <div style="display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap;">
@@ -362,6 +362,26 @@
                 mobileNav.classList.remove('active');
             });
         });
+
+        // Scroll animation with Intersection Observer
+        const scrollAnimateElements = document.querySelectorAll('.scroll-animate');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        scrollAnimateElements.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
